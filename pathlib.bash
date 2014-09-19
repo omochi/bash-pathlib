@@ -186,7 +186,6 @@ path_get_relative(){
 	local i
 	# 一致する限り進む
 	for (( i = 0 ; i < ${#from_items[@]} && i < ${#to_items[@]} ; i++ )) ; do
-		echo "[$i][${from_items[$i]}][${to_items[$i]}]"
 		if [[ "${from_items[$i]}" != "${to_items[$i]}" ]] ; then
 			break
 		fi
