@@ -199,13 +199,13 @@ test_path_array_join(){
 	assert_eq '$(path_array_join a)'     ''
 	a=("  ")
 	assert_eq '$(path_array_join a)'     '  '
-    a=("a" "b" ".." "c" "." "d")
+	a=("a" "b" ".." "c" "." "d")
 	assert_eq '$(path_array_join a)'     'a/b/../c/./d'
 	a=("/")
 	assert_eq '$(path_array_join a)'     '/'
-    a=("/" "  a  " ".." "  b  " "")
+	a=("/" "  a  " ".." "  b  " "")
 	assert_eq '$(path_array_join a)'     '/  a  /../  b  /'
-    a=("/" "a" "b" ".." "c" "." "d" "")
+	a=("/" "a" "b" ".." "c" "." "d" "")
 	assert_eq '$(path_array_join a)'     '/a/b/../c/./d/'
 }
 
