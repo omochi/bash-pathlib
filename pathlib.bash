@@ -10,7 +10,7 @@ array_copy(){
 
 # $1: string
 # $2: needle string
-# 部分文字列を探す。見つからければ-1を返す。
+# 部分文字列を探す。見つからなければ-1を返す。
 str_pos(){
 	local i
 	local n=$(( ${#1} - ${#2} + 1 ))
