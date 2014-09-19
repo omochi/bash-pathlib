@@ -5,4 +5,5 @@ bashでファイルパスを取り扱う関数。相対パスを求める事が�
 
 ## 使い方
 
-[test.bash](https://github.com/omochi/bash-pathlib/blob/master/test.bash)を参照。
+[呼び出し例のexample.bash](https://github.com/omochi/bash-pathlib/blob/master/example.bash)や
+[テストコードのtest.bash](https://github.com/omochi/bash-pathlib/blob/master/example.bash)を参照。
