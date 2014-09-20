@@ -74,20 +74,26 @@ path_is_absolute(){
 }
 
 # $1: base path string
-# $2: append path string
+# $2...: append path strings
 # パス文字列を追加する。
 # baseの末尾に[/]が無ければ追加する。
 # 追加するパスは絶対パスはダメ。
 path_append(){
-	if path_is_absolute "$2" ; then
-		echo "absolute path can't append: $2" >&2
-		return 1
-	fi
-	if [[ "$1" == "" ]] ; then
-		echo "$2"
-		return 0
-	fi
-	echo "${1%/}/$2"
+	local path=$1
+	shift
+	while [[ $# -ge 1 ]] ; do
+		if path_is_absolute "$1" ; then
+			echo "absolute path can't append: $1" >&2
+			return 1
+		fi
+		if [[ "$path" == "" ]] ; then
+			path="$1"
+		else
+			path="${path%/}/$1"
+		fi
+		shift
+	done
+	echo "$path"
 }
 
 # $1: path string
